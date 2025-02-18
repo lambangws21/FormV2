@@ -1,7 +1,10 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import ClientWrapper from "@/components/dashboard/client-wrapper";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,13 +18,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main>
+      <ClientWrapper>
+        <main >
           <Toaster />
           {children}
         </main>
+        </ClientWrapper>
       </body>
     </html>
   );
